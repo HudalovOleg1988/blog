@@ -1,0 +1,308 @@
+@heightDecstop: 61px;
+@heightPhone: 65px;
+.background_decstop(@link) {
+  background: @link no-repeat 10px center;
+  background-size: 27px;
+}
+.background_nav(@link) {
+  background: @link no-repeat center center;
+  background-size: 25px;
+}
+.background_nav_phone(@link) {
+  background: @link no-repeat 20px center;
+  background-size: 25px;
+  background-color: lighten(#24292f,80%);
+}
+
+header {
+  height: 100%;
+  height: @heightDecstop;
+  background-color: #24292f;
+  text-align: center;
+  .headerContent {
+    display: inline-block;
+    height: @heightDecstop;
+    .logo {
+      float: left;
+      display: block;
+      width: 61px;
+      height: @heightDecstop;
+      font-size: 0;
+      background: url('/icon/logo.png') no-repeat center center;
+      background-size: 25px;
+    }
+    ul {
+      float: left;
+      list-style-type: none;
+      overflow: hidden;
+      display: inline-block;
+
+      .departmentsListContent {
+        .departmentsListHeader {
+          font-size: 0;
+        }
+        li {
+          float: left;
+          // border: 3px solid blue;
+          a {
+            display: block;
+            line-height: @heightDecstop;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 0 15px 0 55px;
+            // border: 1px solid red;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          &:nth-child(2) a {
+           .background_decstop(url('/icon/html.png'));
+          }
+          &:nth-child(3) a {
+           .background_decstop(url('/icon/css.png'));
+          }
+          &:nth-child(4) a {
+           .background_decstop(url('/icon/js.png'));
+          }
+          &:nth-child(5) a {
+           .background_decstop(url('/icon/php.png'));
+          }
+          &:nth-child(6) a {
+           .background_decstop(url('/icon/mysql.png'));
+          }
+          &:last-child a {
+           .background_decstop(url('/icon/jquery.png'));
+          }
+          &:last-child a {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 412px) and (orientation: portrait) {
+  .header_phone;
+}
+@media (max-width: 844px) and (orientation: landscape) {
+  .header_phone;
+}
+@media (min-width: 412px) and (max-width: 820px) and (orientation: portrait) {
+  .header_board;
+}
+
+@media (min-width: 845px) and (max-width: 1180px) and (orientation: landscape) {
+  .header_board;
+}
+
+.header_board {
+  header {
+    .headerContent {
+      ul {
+        .departmentsListContent {
+          li {
+            a {
+              width: 61px;
+              font-size: 0;
+              padding: 0;
+            }
+
+            &:nth-child(2) a {
+             .background_nav(url('/icon/html.png'));
+            }
+            &:nth-child(3) a {
+             .background_nav(url('/icon/css.png'));
+            }
+            &:nth-child(4) a {
+             .background_nav(url('/icon/js.png'));
+            }
+            &:nth-child(5) a {
+             .background_nav(url('/icon/php.png'));
+            }
+            &:nth-child(6) a {
+             .background_nav(url('/icon/mysql.png'));
+            }
+            &:last-child a {
+             .background_nav(url('/icon/jquery.png'));
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.header_phone {
+  header {
+    height: @heightPhone;
+    text-align: left;
+    .headerContent {
+      height: @heightPhone;
+      width: 100%;
+      padding-left: 65px;
+      .departments {
+        position: absolute;
+        left: 0;
+        width: 65px;
+        height: @heightPhone;
+        background: url('/icon/menu.png') no-repeat center center;
+        background-size: 25px;
+      }
+      .logo {
+        float: none;
+        width: 100%;
+        height: @heightPhone;
+        line-height: @heightPhone;
+        text-decoration: none;
+        color: #fff;
+        font-family: 'Alfa Slab One', cursive;
+        font-size: 19px;
+        background-position: 15px center;
+        padding-left: 60px;
+      }
+      ul {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.6);
+
+        .departmentsListClose {
+          float: right;
+          width: 15%;
+          height: 100%;
+          background: url('/icon/close.png') no-repeat center 25px;
+          background-size: 21px;
+        }
+
+        .departmentsListContent {
+          float: left;
+          width: 85%;
+          height: 100%;
+          background-color: #fff;
+          overflow: scroll;
+
+          .departmentsListHeader {
+            height: @heightPhone;
+            line-height: @heightPhone;
+            padding-left: 65px;
+            color: #fff;
+            font-size: 19px;
+            font-weight: 600;
+            background: url('/icon/menu.png') no-repeat 21px center;
+            background-size: 25px;
+            background-color: #24292f;
+          }
+
+          li {
+            float: none;
+
+            a {
+              width: 100%;
+              font-size: 15px;
+              font-weight: 500;
+              color: rgb(20,20,20);
+              background-image: none;
+              padding-left: 65px;
+              border-bottom: 1px solid lighten(#24292f,75%);
+            }
+            &:nth-child(2) a {
+             .background_nav_phone(url('/icon/htmlPhone.png'));
+            }
+            &:nth-child(3) a {
+             .background_nav_phone(url('/icon/cssPhone.png'));
+            }
+            &:nth-child(4) a {
+             .background_nav_phone(url('/icon/jsPhone.png'));
+            }
+            &:nth-child(5) a {
+             .background_nav_phone(url('/icon/phpPhone.png'));
+            }
+            &:nth-child(6) a {
+             .background_nav_phone(url('/icon/mysqlPhone.png'));
+            }
+            &:last-child a {
+             .background_nav_phone(url('/icon/jqueryPhone.png'));
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes showMenuBackground {
+  from
+  {
+    background-color: rgba(0,0,0,0);
+  }
+  to
+  {
+    background-color: rgba(0,0,0,0.6);
+  }
+}
+.showMenuBackground {
+  animation-name: showMenuBackground;
+  animation-duration: .25s;
+  animation-timing-function: ease;
+}
+
+@keyframes hideMenuBackground {
+  from
+  {
+    background-color: rgba(0,0,0,0.6);
+  }
+  to
+  {
+    background-color: rgba(0,0,0,0);
+  }
+}
+.hideMenuBackground {
+  animation-name: hideMenuBackground;
+  animation-duration: .25s;
+  animation-timing-function: ease;
+}
+
+@keyframes showMenuList {
+  from
+  {
+    margin-left: -85%;
+  }
+  to
+  {
+    margin-left: 0;
+  }
+}
+.showMenuList {
+  animation-name: showMenuList;
+  animation-duration: .25s;
+  animation-timing-function: ease;
+}
+
+@keyframes hideMenuList {
+  from
+  {
+    margin-left: 0;
+  }
+  to
+  {
+    margin-left: -85%;
+  }
+}
+.hideMenuList {
+  animation-name: hideMenuList;
+  animation-duration: .25s;
+  animation-timing-function: ease;
+}
+
+.fixBody {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
